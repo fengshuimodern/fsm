@@ -14,6 +14,20 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import CompassRose from "@/app/components/CompassRose";
 
+interface Analysis {
+  id: string;
+  name: string;
+  createdAt: Date | null;
+  floorPlanImage: string;
+  analysis: string;
+  userName: string;
+  age: string;
+  gender: string;
+  element: string;
+  luckyDirection: string;
+  uploadedFiles: any[];
+}
+
 const SkeletonLoader = () => (
   <div className="container mx-auto p-4">
     <div className="flex justify-between items-center mb-6">
@@ -50,7 +64,7 @@ export default function AnalysisResult() {
   const router = useRouter();
   const params = useParams();
   const id = params?.id as string;
-  const [analysis, setAnalysis] = useState(null);
+  const [analysis, setAnalysis] = useState<Analysis | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
   const [isImageModalOpen, setIsImageModalOpen] = useState(false);
@@ -79,7 +93,7 @@ export default function AnalysisResult() {
             setAnalysis({
               id: analysisDoc.id,
               name: data.name,
-              createdAt: data.createdAt?.toDate(),
+              createdAt: data.createdAt?.toDate() || null,
               floorPlanImage: data.floorPlanImage,
               analysis: data.analysis,
               userName: data.userName,
