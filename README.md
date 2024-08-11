@@ -1,4 +1,6 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# FengShuiModern
+
+This is a Next.js project for FengShuiModern, an AI-powered Feng Shui analysis tool.
 
 ## Getting Started
 
