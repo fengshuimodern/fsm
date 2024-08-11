@@ -48,7 +48,8 @@ const SkeletonLoader = () => (
 export default function AnalysisResult() {
   const [user] = useAuthState(auth);
   const router = useRouter();
-  const { id } = useParams();
+  const params = useParams();
+  const id = params?.id as string;
   const [analysis, setAnalysis] = useState(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
