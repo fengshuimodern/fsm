@@ -11,6 +11,7 @@ const nextConfig = {
   env: {
     OPENAI_API_KEY: process.env.OPENAI_API_KEY,
   },
+  output: 'export', // Added this line for Cloudflare Pages compatibility
 };
 
 export default nextConfig;
